@@ -1,6 +1,4 @@
 using System;
-using System.Linq;
-using System.Runtime.CompilerServices;
 using System.Text;
 
 namespace BusyBeaver.BusyBeaverEngine
@@ -9,11 +7,17 @@ namespace BusyBeaver.BusyBeaverEngine
     {
         private int _offset = 0;
 
-        private bool[]? _values;
-
+        private bool[] _values;
+        
         private int _tapeLength = 0;
         
         public const int TapeMargin = 1024;
+
+        public Tape()
+        {
+            _values = new bool[TapeMargin];
+            _offset = -TapeMargin / 2;
+        }
 
         /// <summary>
         /// Expands the tape in a way that the set value is available
@@ -71,7 +75,7 @@ namespace BusyBeaver.BusyBeaverEngine
                 ExpandTape(position);
                 globalPosition = ConvertToGlobal(position);
             }
-
+            
             return _values![globalPosition];
         }
 
@@ -146,7 +150,34 @@ namespace BusyBeaver.BusyBeaverEngine
 
         public int CountOnes()
         {
-            return _values.Sum(x => x == TapeValue.Set ? 1 : 0);
+            var ones = 0;
+            foreach (var t in _values)
+            {
+                ones += t ? 1 : 0;
+            }
+
+            return ones;
+        }
+
+        public int FirstOne()
+        {
+            for (var index = 0; index < _values.Length; index++)
+            {
+                if (_values[index]) return index + _offset;
+            }
+
+            return -1;
+        }
+        
+        public int LastOne()
+        {
+            var lastOne = 0;
+            for (var index = 0; index < _values.Length; index++)
+            {
+                if (_values[index]) lastOne = index;
+            }
+
+            return lastOne + _offset;
         }
     }
 }
