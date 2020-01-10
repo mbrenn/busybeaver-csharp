@@ -1,0 +1,16 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "BusyBeaver", "BusyBeaver\BusyBeaver.csproj", "{50CD65D4-17E7-4C33-B292-F0A4A4B658D0}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{50CD65D4-17E7-4C33-B292-F0A4A4B658D0}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{50CD65D4-17E7-4C33-B292-F0A4A4B658D0}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{50CD65D4-17E7-4C33-B292-F0A4A4B658D0}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{50CD65D4-17E7-4C33-B292-F0A4A4B658D0}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+EndGlobal
