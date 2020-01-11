@@ -101,7 +101,7 @@ namespace BusyBeaver.BusyBeaverEngine
             }
 
             var value = _values[globalPosition];
-            _values[globalPosition] = _values[globalPosition] ? state.SetRule.SetValue :state.NotSetRule.SetValue;
+            _values[globalPosition] = _values[globalPosition] ? state.SetRule!.SetValue : state.NotSetRule!.SetValue;
             return value;
         }
 
